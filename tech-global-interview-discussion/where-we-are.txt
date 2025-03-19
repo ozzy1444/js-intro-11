@@ -1,0 +1,39 @@
+JavaScript
+	Output Statements
+	Variables
+	Data Types
+	String
+	Number
+	Math
+	Functions
+	Conditional Statements
+	Arrays
+	Loops
+	Objects
+Hoisting
+Scope
+Mutability
+Callbacks
+JSON
+Closure
+Error Handling
+ES6
+Git/GitHub
+Asynchronous JavaScript
+OOP (ES6 vs before)
+JS Modules
+HTML-CSS
+JS DOM Manipulation
+55 TOP INTERVIEW QUESTIONS -> Knowledge
+40 TOP INTERVIEW QUESTIONS -> Coding
+10: Easy
+10: Middle
+10: Hard
+10: Challenging
+reverse string -> 'John' -> 'nhoJ'
+min and max in array ->
+factorial, prime, palindrome
+armStrong, countCharacters
+'Banana' -> { 'B': 1, 'a' : 3, 'n' : 2}
+'dB12n50Hello' -> 8
+'dB12n50Hello' -> 62

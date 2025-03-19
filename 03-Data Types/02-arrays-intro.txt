@@ -1,0 +1,43 @@
+// Arrays 
+let studentName = 'Ayah';
+
+//Multiple names, numbers, objects, strings, prices
+let name1 = 'aziz';
+let name2 = 'majd';
+let name3 = 'ameer';
+
+When you have plenty of names and lots of data, besides declaring each name with a variable. We use array
+
+to use an array you delcare a variable then use []
+
+const names = ['aziz', 'majd', 'ameer']
+
+When declaring a variable for an array always use const, not let. it is perferred that way 
+data/ values inside arrays are called elements
+
+const favMovies = ['Matrix', 'Avengers' ]
+
+arrays: used to store multiple similar data (data types of these values are same)
+    const arr = [5, 10, 10.5]
+    const arr2 = [true, false, true, true]
+
+object : used to store key-value pairs (properties) of one entity
+    const obj1 = {
+        firstName: 'John', 
+        lastName: 'Doe',
+        age: '45'
+    }; 
+
+    const creditCardInfo = {
+        fullName: 'John Doe', 
+        number: '1234-1234-4567-6789', 
+        expiration: '04/29', 
+        securityNum: '123'
+    }; 
+
+    //If I want to pull the expiration number this is how you find it 
+    creditCardInfo.expiration 
+
+    // Or if I want to pull the card number 
+    creditCardInfo.number
+

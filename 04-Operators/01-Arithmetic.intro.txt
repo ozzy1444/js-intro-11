@@ -1,0 +1,28 @@
+// exponentiation (is basically power)
+
+console.log(3 ** 2); // 9
+console.log(4 ** 3); // 64 
+console.log(2 ** 5) / 4 + 3 
+
+Order of operation 
+1. Exponentation 
+2. Parantheses
+3. Multiplication/ Division 
+    3.5 Remainder %
+4. Addition/ Subtraction 
+
+Remainder/ Modulus 
+1. You basically divide and whatever is left is the answer
+    example ; 12 % 5 = 2 // Because you can fit 2 5s in 12 then you have 2 left 
+
+2. If the number on the left is smaller than the one on the right 
+    Remainder will be left number itself 
+        8 % 9 = 8 
+        100 % 9800 = 100 
+3. If the number on the left is bigger than the right and not divisable by the 
+Remainder will be more than zero but less than the number on the right 
+    23 % 7 = 2 
+    27 % 7 = 6 
+    28 % 7 = 0
+
+

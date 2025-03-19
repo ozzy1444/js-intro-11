@@ -1,0 +1,53 @@
+let fname = 'John'
+let lname = 'Doe'; 
+let age = 45
+let vip = false 
+
+const person = {
+    fname: 'John',
+    lname: 'Doe',
+    age: 45,
+    vip: false
+}; 
+
+console.log(person);
+console.log(typeof person); 
+
+// Updateing the property values for an object 
+const program = {
+    name: 'SDET', 
+    start: 'Jan 20', 
+    Duration: '6 months'
+}
+
+console.log(program); 
+
+program.start = 'Jan 27'
+program.Duration = '7 months'
+
+console.log(program)
+
+const student = {
+    fullname: 'aziz atieh', 
+    courses: ['sdet',  'cs'], 
+    address: {
+        street: '123 abc st', 
+        state: 'IL', 
+        city: 'Chicago', 
+        aptNum: null, 
+
+    }
+}
+
+const person = {
+    fname: 'john', 
+    lname: 'Doe', 
+    age: 25
+}; 
+
+let price = 2.5; 
+let quantity = 10; 
+
+// total price is = $25
+
+console.log(`total price is = $${price * quantity}`)
