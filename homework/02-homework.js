@@ -28,6 +28,7 @@ console.log(`The exponentiation of ${str1} and ${str2} is = ${result6}`)
 console.log('\n -------------TASK 2-----------\n')
 
 
+
 let s1 = '200';
 let s2 = '-50'; 
 
