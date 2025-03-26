@@ -67,7 +67,7 @@ function hasVowel(str) {
     return false;
 }
 
-console.log(hasVowel('Javascript'))
+console.log(hasVowel('btc'))
 
 
 /*
