@@ -10,12 +10,12 @@ for(const num of numbers) {
 }
 console.log(oddEven); 
 
-
+const numbers = [5, 3, 2, 20];
 // map() of doing this task
-numbers.map((num) => {
-    if(num % 2 === 0) return 'even';
-    return 'odd';
-}); 
+//numbers.map((num) => {
+//    if(num % 2 === 0) return 'even';
+//    return 'odd';
+//}); 
 //or with ternirary
 const oddEven2 = numbers.map((num) => num % 2 === 0 ? 'even' : 'odd');
 
