@@ -1,7 +1,8 @@
 /*
 Double or Triple the Word 
-Write a function named as doubleOrTripleWord() which takes a string word as an argument and 
-returns the given word back tripled if the string length is even or doubled if the string length is odd when 
+Write a function named as doubleOrTripleWord() which takes a string word as an argument 
+and returns the given word back tripled if the string length 
+is even or doubled if the string length is odd when 
 invoked. 
  
 Examples: 
@@ -14,20 +15,19 @@ doubleOrTripleWord("22")       -> "222222"
 */ 
 
 function doubleOrTripleWord(str) {
-    if(str.length % 2 === 0) {
-        return `${str}${str}${str}`
-    }
-    else {
-        return `${str}${str}`
-    }
+  if(str.length % 2 === 0) return `${str}${str}${str}`
+   else 
+  return `${str}${str}`
+  
 }
 
-console.log(doubleOrTripleWord('Tech'))
+console.log(doubleOrTripleWord("Tech"))
 
  
 /*
 First and Last Word 
-Write a function named as firstlastWord() which takes a string word as an argument and returns the 
+Write a function named as firstlastWord() which takes a string 
+word as an argument and returns the 
 first and last words from the given string when invoked. 
 NOTE: Return empty string if the given string does not have any word. 
  
@@ -38,10 +38,21 @@ firstLastWord("Hello")       -> "HelloHello"
 firstLastWord("")         -> "" 
 firstLastWord("  ")       -> "" 
 */ 
+
+function firstLastWord(str) {
+  let strArr = str.split(' ');
+  let firstWord = str[0];
+  let lastWord = strArr[strArr.length - 1];
+  let result = firstWord + ' ' + lastWord
+  return result
+}
+
+console.log(firstLastWord('I love math and coding'))
  
 /*
 Has Vowel 
-Write a function named hasVowel() which takes a string argument and returns true if the string has a 
+Write a function named hasVowel() which takes a 
+string argument and returns true if the string has a 
 vowel, returns false if the string doesn’t contain any vowel letter. 
 NOTE: Vowels are = a, e, o, u, i. 
 NOTE: Ignore upper/lower cases. 
@@ -53,16 +64,25 @@ hasVowel("Tech Global")     -> true
 hasVowel("1234")       -> false 
 hasVowel("ABC")       -> true 
 */ 
+
+function hasVowel(str) {
+  let vowel = 'AEOUIaeoui';
+  for(const char of str) {
+    if(vowel.includes(char)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+console.log(hasVowel('Java'))
  
 /*
 Start Vowel 
 Write a function named as startVowel() which takes a string word as an argument and returns true if 
 given string starts with a vowel, and false otherwise when invoked. 
 NOTE: Vowel letters: a, e, i o, u, A, E, I, O, U 
- www.techglobalschool.com 
- 
-  18 
- 
+www.techglobalschool.com 
 Examples: 
 startVowel("Hello")     -> false 
 startVowel("Apple")    -> true 
@@ -71,6 +91,16 @@ startVowel("")     -> false
 startVowel("  ")     -> false 
 startVowel("123")     -> false 
 */ 
+
+function startVowel(str) {
+  let vowel = 'AEOUIaeoui'
+  if(vowel.includes(str[0])) {
+    return true;
+  }
+  return false;
+}
+
+console.log(startVowel('Bilal'))
  
 /*
 Average of Edges 
@@ -85,10 +115,18 @@ averageOfEdges(-3, 15, -3)   -> 6
 averageOfEdges(10, 13, 20)   -> 15 
 */ 
  
+function averageOfEdges(num, num2, num3) {
+  let max = Math.max(num, num2, num3)
+  let min = Math.min(num, num2, num3)
+  let averageOfMinMax = (max + min) / 2
+  return averageOfMinMax
+} 
+
+console.log(averageOfEdges(-2, -2, 10))
  
  
  
- 
+/*
 Swap First and Last Characters 
 Write a function named replaceFirstLast() which takes a string argument and returns a new string with 
 the first and last characters replaced. 
@@ -100,16 +138,28 @@ replaceFirstLast("")         ->  ""
 replaceFirstLast("Hello")       ->  "oellH" 
 replaceFirstLast("Tech Global")     -> "lech GlobaT" 
 replaceFirstLast("A")       -> "" 
-replaceFirstLast("    A      ")      -> "" 
+replaceFirstLast("    A      ")      -> ""
+*/ 
+
+function replaceFirstLast(str) {
+  let firstLetter = str[0];
+  let lastLetter = str[str.length - 1];
+  let middleLetters = str.slice(1, -1);
+  let result = `${lastLetter}${middleLetters}${firstLetter}`
+  if(str.length < 2) {
+    return ''
+  }
+  else return result 
+}
+
+console.log(replaceFirstLast('Tech Global'))
  
+/*
 Swap First and Last Four Characters 
 Write a function named as swap4() which takes a string word as an argument and returns the string 
 back with its first and last 4 characters swapped when invoked. 
-NOTE: Return empty string if the given string does not have 8 or more characters. 
- www.techglobalschool.com 
- 
-  19 
- 
+NOTE: Return empty string if the given string does not have 8 or more characters.  
+
 Examples: 
 swap4("abc")       -> "" 
 swap4("JavaScript")      -> "riptScJava" 
@@ -117,7 +167,23 @@ swap4("TechGlobal")     -> "obalGlTech"
 swap4("")         -> "" 
 swap4("  ")       -> "" 
 swap4("Apple")       -> "" 
- 
+*/ 
+
+function swap4(str) {
+  let first4 = str.slice(0, 5);
+  let last4 =  str.slice(-4);
+  let middle = str.slice(5, -5);
+  let result = `${last4}${middle}${first4}`
+  if(str.length <= 8) {
+    return ''
+  }
+  else return result
+}
+
+console.log(swap4('JavaScript'))
+
+
+/*
 Swap First and Last Words 
 Write a function named as swapFirstLastWord() which takes a string word as an argument and returns 
 the string back with its first and last words swapped when invoked. 
@@ -131,7 +197,21 @@ swapFirstLastWord("")         -> ""
 swapFirstLastWord("  ")         -> "" 
 swapFirstLastWord("Hello")        -> "" 
 swapFirstLastWord("Hello   ")       -> "" 
- 
+*/ 
+
+function swapFirstLastWord(str) {
+  let strArr = str.split(' ');
+  let firstWord = strArr[0];
+  let lastWord = strArr[strArr.length - 1];
+  strArr[0] = lastWord
+  strArr[strArr.length - 1] = firstWord
+  return strArr.join('')
+}
+
+console.log(swapFirstLastWord('Hello World'))
+
+
+/*
 Count Positive Numbers 
 Write a function named countPos() which takes an array of numbers as an argument and returns how 
 many elements are positive when invoked.  
@@ -140,23 +220,53 @@ Examples:
 countPos([-45, 0, 0, 34, 5, 67])     -> 3 
 countPos([-23, -4, 0, 2, 5, 90, 123])   -> 4 
 countPos([0, -1, -2, -3])       -> 0 
- 
+*/ 
+
+function countPos(arr) {
+  let posCounter = 0;
+  for(const pos of arr) {
+    if(pos > 0) {
+      posCounter++
+  }
+}
+  return posCounter
+  
+}
+
+console.log(countPos([-23, -4, 0, 2, 5, 90, 123]))
+
+
+
+ /*
 Find Even Numbers 
 Write a function named as getEvens() which takes 2 number arguments and returns all the even 
 numbers as an array stored from smallest even number to greatest even number when invoked. 
 NOTE: Make your code dynamic that works for any numbers and return empty array if there are no even 
 numbers in the range of given 2 numbers. 
-Assume you will not be given negative numbers. 
- 
+Assume you will not be given negative numbers.  
 Examples: 
- www.techglobalschool.com 
- 
-  20 
 getEvens(2, 7)    -> [ 2, 4, 6 ] 
 getEvens(17, 5)    -> [ 6, 8, 10, 12, 14, 16 ] 
 getEvens(4, 4)    -> [ 4 ] 
 getEvens(3, 3)    -> [ ] 
- 
+*/
+
+function getEven(num, num2) {
+  let even = [];
+  let start = Math.min(num, num2);
+  let end = Math.max(num, num2);
+  for(let i = start; i <= end; i++){
+    if(i % 2 === 0){
+      even.push(i)
+    }
+  }
+  return even;
+}
+
+console.log(getEven(2, 7))
+
+
+/*
 Find Numbers Divisible By 5 
 Write a function named as getMultipleOf5() which takes 2 number arguments and returns all the numbers 
 divisible by 5 as an array stored from first found match to last found match when invoked. 
@@ -168,39 +278,86 @@ getMultipleOf5(3, 17)    -> [ 5, 10, 15]
 getMultipleOf5(23, 5)    -> [ 20, 15, 10, 5 ] 
 getMultipleOf5(5, 5)      -> [ 5 ] 
 getMultipleOf5(2, 4)      -> [ ] 
+*/
+
+function getMultipleOf5(num, num2) {
+  let get5 = []
+  let start = Math.min(num, num2);
+  let end = Math.max(num, num2);
+
+  for(let i = start; i <= end; i++){
+    if(i % 5 === 0){
+      get5.push(i)
+    } 
+  }
+  return get5;
+}
+
+console.log(getMultipleOf5(23, 5))
  
- 
+/*
 Count Negative Numbers 
 Write a function named countNeg() which takes an array of numbers as an argument and returns how 
 many elements are negative when invoked.  
- 
 Examples: 
 countNeg([-45, 0, 0, 34, 5, 67])     -> 1 
 countNeg([-23, -4, 0, 2, 5, 90, 123])   -> 2 
 countNeg([0, -1, -2, -3])       -> 3 
+*/
+
+function countNeg(arr) {
+  let countNum = 0;
+  for(const num of arr) {
+    if(i < 0) {
+      countNum++
+    }
+  }
+  return countNum
+}
+
+console.log(countNeg([-45, 0, 0, 34, 5, 67]))
+
+/*
 Count A 
 Write a function named countA() which takes a string argument and returns how many A or a there are 
 in the given string when invoked. 
 NOTE: Ignore case sensitivity.  
- 
 Examples: 
 countA("TechGlobal is a QA bootcamp")       -> 4 
 countA("QA stands for Quality Assurance")     -> 5 
 countA("Cypress")             -> 0 
- 
+*/
+
+function countA(str) {
+  let aCounter = 0;
+  for(let i = 0; i <= str.length - 1; i++) {
+    if(str[i] === 'A' || str[i] === 'a') {
+      aCounter++
+    }
+  }
+  return aCounter
+}
+
+console.log(countA('TechGlobal is a QA bootcamp'))
+
+
+/*
 Count Words 
 Write a function named countWords() which takes a string argument and returns the total count of 
 words in the given string when invoked. 
- www.techglobalschool.com 
- 
-  21 
 NOTE: Be careful about the extra whitespaces before and after the string. 
  
 Examples: 
 countWords("     Javascript is fun       ")         -> 3 
 countWords("Cypress is an UI automation tool.    ")     -> 6  
 countWords("1 2 3 4")             -> 4 
+*/ 
+
+function countWords(str) {
+  
+}
  
+/*
 Factorial 
 Write a function named as factorial() which takes a number as an argument and returns the factorial of 
 the number when invoked. 
