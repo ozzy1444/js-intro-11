@@ -16,8 +16,9 @@ doubleOrTripleWord("22")       -> "222222"
 
 function doubleOrTripleWord(str) {
   if(str.length % 2 === 0) return `${str}${str}${str}`
-   else 
+   else {
   return `${str}${str}`
+  }
   
 }
 
@@ -43,11 +44,11 @@ function firstLastWord(str) {
   let strArr = str.split(' ');
   let firstWord = str[0];
   let lastWord = strArr[strArr.length - 1];
-  let result = firstWord + ' ' + lastWord
+  let result = firstWord + lastWord
   return result
 }
 
-console.log(firstLastWord('I love math and coding'))
+console.log(firstLastWord('I love coding'))
  
 /*
 Has Vowel 
@@ -82,7 +83,7 @@ Start Vowel
 Write a function named as startVowel() which takes a string word as an argument and returns true if 
 given string starts with a vowel, and false otherwise when invoked. 
 NOTE: Vowel letters: a, e, i o, u, A, E, I, O, U 
-www.techglobalschool.com 
+
 Examples: 
 startVowel("Hello")     -> false 
 startVowel("Apple")    -> true 
@@ -100,7 +101,7 @@ function startVowel(str) {
   return false;
 }
 
-console.log(startVowel('Bilal'))
+console.log(startVowel('Apple'))
  
 /*
 Average of Edges 
@@ -170,9 +171,9 @@ swap4("Apple")       -> ""
 */ 
 
 function swap4(str) {
-  let first4 = str.slice(0, 5);
+  let first4 = str.slice(0, 4);
   let last4 =  str.slice(-4);
-  let middle = str.slice(5, -5);
+  let middle = str.slice(4, -4);
   let result = `${last4}${middle}${first4}`
   if(str.length <= 8) {
     return ''
@@ -180,7 +181,7 @@ function swap4(str) {
   else return result
 }
 
-console.log(swap4('JavaScript'))
+console.log(swap4('TechGlobal'))
 
 
 /*
@@ -205,10 +206,10 @@ function swapFirstLastWord(str) {
   let lastWord = strArr[strArr.length - 1];
   strArr[0] = lastWord
   strArr[strArr.length - 1] = firstWord
-  return strArr.join('')
+  return strArr.join(' ')
 }
 
-console.log(swapFirstLastWord('Hello World'))
+console.log(swapFirstLastWord('bar foo bar foo'))
 
 
 /*
@@ -281,19 +282,19 @@ getMultipleOf5(2, 4)      -> [ ]
 */
 
 function getMultipleOf5(num, num2) {
-  let get5 = []
+  let result = [];
   let start = Math.min(num, num2);
   let end = Math.max(num, num2);
 
-  for(let i = start; i <= end; i++){
-    if(i % 5 === 0){
-      get5.push(i)
+  for(let i = start; i < end; i++) {
+    if(i % 5 === 0) {
+      result.push(i);
     } 
   }
-  return get5;
+  return result;
 }
 
-console.log(getMultipleOf5(23, 5))
+console.log(getMultipleOf5(3, 17))
  
 /*
 Count Negative Numbers 
@@ -354,8 +355,15 @@ countWords("1 2 3 4")             -> 4
 */ 
 
 function countWords(str) {
-  
+  str = str.trim()
+
+  const parts = str.split(' ');
+  const words = parts.filter(word => word !== '');
+
+  return words.length
 }
+
+console.log(countWords("     Javascript is fun       "))
  
 /*
 Factorial 
@@ -364,12 +372,26 @@ the number when invoked.
 NOTE: Mathematically, the factorial of a non-negative integer n is defined as: 
 n! = n × (n-1) × (n-2) × ... × 2 × 1 
 Assume you will not be given a negative number. 
- 
 Examples: 
 factorial(5)     -> 120 
 factorial(4)    -> 24 
 factorial(0)    -> 1 
 factorial(1)    -> 1 
+*/
+
+function factorial(num) {
+  let total = 1
+  for(let i = num; i >= 1; --i) {
+    total *= [i]
+  }
+  return total
+}
+
+console.log(factorial(5))
+
+
+
+/*
 Count 3 or Less 
 Write a function named as count3OrLess() which takes a string word as an argument and returns the 
 count of the words that has 3 characters or less when invoked. 
@@ -380,8 +402,17 @@ count3OrLess("Hi John")         -> 1
 count3OrLess("JavaScript is fun")       -> 2 
 count3OrLess("My name is John Doe")     -> 3 
 count3OrLess("")           -> 0 
+*/
+
+function count30Less(str) {
+  const words = str.split(' ')
+  const newWord = words.filter(word => word !== '' && word.length <= 3)
+  return newWord.length
+}
+
+console.log(count30Less('Hi John name hi hi '))
  
- 
+/*
 Remove Extra Spaces 
 Write a function named as removeExtraSpaces() which takes a string word as an argument and 
 returns the string back with all extra spaces removed when invoked. 
@@ -391,14 +422,23 @@ removeExtraSpaces("Hello")           -> "Hello"
 removeExtraSpaces("    Hello    World  ")       -> "Hello World" 
 removeExtraSpaces("   JavaScript is        fun")    -> "JavaScript is fun” 
 removeExtraSpaces("")             -> ""  
+*/ 
+
+function removeExtraSpaces(str) {
+  let word = str.trim()
+  const words = str.split(' ').filter(word => word !== '')
+  return words.join(' ')
+  
+}
+
+console.log(removeExtraSpaces('    Hello    World  '))
  
- www.techglobalschool.com 
- 
-  22 
- 
+/*
 Middle Number 
 Write a function named middleInt() which takes three number arguments and return the middle 
-number.  
+number. 
+
+This problem literally just asks for the middle number between the min and the max. dont over think it 
  
 Examples: 
 middleInt(1, 2, 2)     -> 2 
@@ -406,12 +446,19 @@ middleInt(5, 5, 8)     -> 5
 middleInt(5, 3, 5)     -> 5 
 middleInt(1, 1, 1)     -> 1 
 middleInt(-1, 25, 10)   -> 10 
+*/
+
+
+function middleInt(num, num2, num3) {
+  const nums = [num, num2, num3];
+  nums.sort((x, y) => x -y)
+  return nums[1]
+}
+
+console.log(middleInt(5, 1, 7))
  
  
- 
- 
- 
- 
+/*
 First Duplicate Element 
 Write a function named as firstDuplicate() which takes an array argument and returns the first 
 duplicated number in the array when invoked. 
@@ -421,30 +468,47 @@ same.
  
 Examples: 
 firstDuplicate([ 3, 7, 10, 0, 3, 10 ])      -> 3 
-firstDuplicate([ 5, 7, 7, 0, 5, 10 ])      -> 5 
+firstDuplicate([ 5, 7, 7, 0, 5, 10 ])      -> 7 
 firstDuplicate([ 5, '5', 3, 7, 4 ])      -> -1 
 firstDuplicate([ 123, 'abc', '123', 3, 'abc' ])    -> 'abc' 
 firstDuplicate([ 1, 2, 3])        -> -1 
 firstDuplicate([ 'foo', 'abc', '123', 'bar’ ])     -> -1 
+*/ 
+
+function firstDuplicate(arr) {
+  let dup = []
+  for(let i = 0; i <= arr.length; i++) {
+
+    for(let j = 0; j <= dup.length; j++) {
+      if(arr[i] === dup[j]) return arr[i]
+    }
+    dup.push(arr[i])
+  }
+   return -1
+}
+
+console.log(firstDuplicate(([ 5, 7, 7, 0, 5, 10 ]) ))
  
- 
+/*
 Find All Duplicate Elements 
 Write a function named as getDuplicates() which takes an array argument and returns all the duplicated 
 elements in the array when invoked. 
 NOTE: Make your code dynamic that works for any array and return empty array if there are no 
 duplicates in the array. For two elements to be considered as duplicated, value and data types of the 
 elements must be same. 
- www.techglobalschool.com 
- 
-  23 
  
 Examples: 
 getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0 ])      -> [ 0, -7 ] 
 getDuplicates([ 1, 2, 5, 0, 7 ])          -> [ ] 
 getDuplicates(['A', 'foo', '12’ , 12, 'bar', 'a', 'a', 'foo' ])    -> [ 'foo', 'a’ ] 
 getDuplicates([ 'foo', '12' , 12, 'bar', 'a' ])       -> [ ] 
- 
- 
+*/ 
+
+
+
+
+
+/*
 Count Vowels 
 Write a function named as countVowels() which takes a string word as an argument and returns the 
 count of the vowel letters when invoked. 
@@ -454,6 +518,22 @@ Examples:
 countVowels("Hello")       -> 2 
 countVowels("JavaScript is fun")    -> 5 
 countVowels("")         -> 0 
+*/ 
+
+function countVowel(str) {
+  let count = 0;
+  let vowel = 'aeiouAEIOU'
+  for(const has of str) {
+    if(vowel.includes(has)) {
+      count++
+    }
+  }
+  return count
+}
+
+console.log(countVowel('Hello'))
+
+/*
 Reverse String Words 
 Write a function named as reverseStringWords() which takes a string as an argument and returns 
 string back with each word separately reversed when invoked. 
@@ -466,8 +546,21 @@ reverseStringWords("I like JavaScript")     -> "I ekil tpircSavaJ"
 reverseStringWords("Hello")       -> "olleH" 
 reverseStringWords("")         -> "" 
 reverseStringWords(" ")         -> "" 
+*/
+
+function reverseStringWords(str) {
+  const words = str.split(' ')
+  const reversedWords = []
+  for(const word of words) {
+    const result = word.split('').reverse().join('')
+    reversedWords.push(result)
+  }
+  return reversedWords.join(' ')
+}
+
+console.log(reverseStringWords('Hello World'))
  
- 
+ /*
 Count Consonants 
 Write a function named as countConsonants() which takes a string word as an argument and returns 
 the count of the consonant letters when invoked. 
@@ -477,10 +570,10 @@ Examples:
 countConsonants("Hello")         -> 3 
 countConsonants("Hello World")       -> 8 
 countConsonants("JavaScript is fun")     -> 12 
- www.techglobalschool.com 
- 
-  24 
 countConsonants("")         -> 0 
+*/ 
+
+
  
  
  
@@ -495,6 +588,7 @@ countMultipleWords([ "foo", "bar", "foobar", "   foobar   " ])     -> 0
 countMultipleWords([ "f o o", "b a r", "foo bar", "     foo bar   " ])     -> 4 
 countMultipleWords([ ])               -> 0 
  
+/*
 FizzBuzz 
 Write a function named as fizzBuzz() which takes 2 number arguments and returns a string composed 
 with below requirements when invoked. 
@@ -511,7 +605,26 @@ Examples:
 fizzBuzz(13, 18)    -> "13 | 14 | FizzBuzz | 16 | 17 | Fizz" 
 fizzBuzz(12, 5)    -> "Buzz | Fizz | 7 | 8 | Fizz | Buzz | 11 | Fizz" 
 fizzBuzz(5, 5)    -> "Buzz" 
-fizzBuzz(9, 6)    -> "Fizz | 7 | 8 | Fizz" 
+fizzBuzz(9, 6)    -> "Fizz | 7 | 8 | Fizz"
+*/ 
+
+function fizzBuzz(num, num2) {
+  let result = []
+  let start = Math.min(num, num2);
+  let end = Math.max(num, num2);
+  for(let i = start; i < end; i++) {
+    if(i % 3 === 0) {
+      result.push('Fizz');
+    } else if(i % 5 === 0) {
+      result.push('Buzz');
+    } else if(i % 3 === 0 && i % 5 === 0) {
+      result.push('FizzBuzz');
+    }
+  }
+  return result
+}
+
+console.log(fizzBuzz(9, 6))
  
  
 Palindrome 
