@@ -27,6 +27,8 @@ function calculateTotalPrice1(obj) {
     for(const item in obj) {
         if(prices[item]) {
             total += prices[item] * obj[item];
+            console.log(`this is ${prices[item]}`)
+            console.log(`this is ${obj[item]}`)
         }
     };
     return total.toFixed(2);
@@ -142,9 +144,13 @@ reverseNumber(111)  -> 111
 */ 
 
 function reverseNumber(num) {
-    num.sort((x, y) => x - y);
+    let result = 0;
 
-   return result;
+    for(let i = num; i > 0; i = Math.floor(i / 10)) {
+        result += i % 10
+        console.log(i)
+        console.log(i % 10)
+    }
 }
 
 console.log(reverseNumber(371));
