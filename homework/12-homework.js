@@ -91,13 +91,7 @@ myPow(0, 0)    -> 1
 myPow(5, 3)    -> 125
 */ 
 
-function myPow(x, n) {
-    let strN = 
-    
-    return x * length;
-}
 
-console.log(myPow(3, 3))
 
 /*
 Task-5
