@@ -15,14 +15,15 @@ let rand1 = getRandomNumber(1, 100);
 let rand2 = getRandomNumber(1, 100);
 let rand3 = getRandomNumber(1, 100);
 
-let aveRand = (rand1 + rand2 + rand3)/ 3; 
+let aveRand = (rand1 + rand2 + rand3) / 3; 
 
 console.log(aveRand)
 
 if(aveRand >= 50) {
     console.log(true) 
 } 
-else {(aveRand <= 50) 
+else {
+    (aveRand <= 50) 
     console.log(false)
 }
 
@@ -201,6 +202,6 @@ function swapFirstLastWord(word) {
     return `${lastWord} ${middleWords} ${firstWord}`
 }
 
-console.log(swapFirstLastWord());
+console.log(swapFirstLastWord('I love Javascript'));
 
 
