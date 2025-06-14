@@ -43,7 +43,7 @@ firstLastWord("  ")       -> ""
 function firstLastWord(str) {
   let strArr = str.split(' ');
   let firstWord = str[0];
-  let lastWord = strArr[strArr.length - 1];
+  let lastWord = strArr[strArr.length -1];
   let result = firstWord + lastWord
   return result
 }
@@ -124,6 +124,15 @@ function averageOfEdges(num, num2, num3) {
 } 
 
 console.log(averageOfEdges(-2, -2, 10))
+
+function averageOfEdges(num, num2, num3) {
+  let max = Math.max(num, num2, num3)
+  let min = Math.min(num, num2, num3)
+  let average = (max + min) / 2
+  return average
+}
+
+console.log(averageOfEdges(0, 0, 6))
  
  
  
@@ -181,7 +190,7 @@ function swap4(str) {
   else return result
 }
 
-console.log(swap4('TechGlobal'))
+console.log(swap4('yt'))
 
 
 /*
